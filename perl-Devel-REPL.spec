@@ -1,6 +1,5 @@
-
 %define realname   Devel-REPL
-%define version    1.002001
+%define version    1.003001
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
@@ -9,10 +8,8 @@ Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    Read lines until all blocks are closed
-Source:     http://www.cpan.org/modules/by-module/Devel/%{realname}-%{version}.tar.gz
 Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Source:     http://www.cpan.org/modules/by-module/Devel/%{realname}-%{version}.tar.gz
 BuildRequires: perl(B::Keywords)
 BuildRequires: perl(Data::Dump::Streamer)
 BuildRequires: perl(File::HomeDir)
@@ -27,8 +24,8 @@ BuildRequires: perl(Term::ANSIColor)
 BuildRequires: perl(Term::ReadLine)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(namespace::clean)
-
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 Colors are very pretty.
@@ -41,12 +38,11 @@ plugin uses the Term::ANSIColor manpage, so consult that module for valid
 colors. The defaults are actually 'green' and 'bold red'.
 
 
-
 %prep
 %setup -q -n %{realname}-%{version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor --skipdeps
 %make
 
 %check
@@ -63,6 +59,5 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %doc Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
-/usr/bin/re.pl
-
+%{perl_vendorlib}/*
+%{_bindir}/re.pl
