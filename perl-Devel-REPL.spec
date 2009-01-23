@@ -1,5 +1,5 @@
 %define realname   Devel-REPL
-%define version    1.003001
+%define version    1.003002
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
