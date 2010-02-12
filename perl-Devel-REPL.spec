@@ -1,15 +1,16 @@
-%define realname   Devel-REPL
-%define version    1.003007
-%define release    %mkrel 1
+%define upstream_name    Devel-REPL
+%define upstream_version 1.003007
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    a modern perl interactive shell
+License:    GPL+ or Artistic
 Group:      Development/Perl
-Summary:    Read lines until all blocks are closed
-Url:        http://search.cpan.org/dist/%{realname}
-Source:     http://www.cpan.org/modules/by-module/Devel/%{realname}-%{version}.tar.gz
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(B::Keywords)
 BuildRequires: perl(Data::Dump::Streamer)
 BuildRequires: perl(File::HomeDir)
@@ -25,29 +26,29 @@ BuildRequires: perl(Term::ANSIColor)
 BuildRequires: perl(Term::ReadLine)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(namespace::clean)
+
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-Colors are very pretty.
+This is an interactive shell for Perl, commonly known as a REPL - Read,
+Evaluate, Print, Loop. The shell provides for rapid development or
+testing of code without the need to create a temporary source code file.
 
-This plugin causes certain prints, warns, and errors to be colored.
-Generally the return value(s) of each line will be colored green (you can
-override this by setting '$_REPL->normal_color' in your rcfile). Warnings
-and compile/runtime errors will be colored with '$_REPL->error_color'. This
-plugin uses the Term::ANSIColor manpage, so consult that module for valid
-colors. The defaults are actually 'green' and 'bold red'.
-
+Through a plugin system, many features are available on demand. You can
+also tailor the environment through the use of profiles and run control
+files, for example to pre-load certain Perl modules when working on a
+particular project.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor --skipdeps
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %buildroot
