@@ -1,5 +1,5 @@
 %define upstream_name    Devel-REPL
-%define upstream_version 1.003007
+%define upstream_version 1.003009
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
