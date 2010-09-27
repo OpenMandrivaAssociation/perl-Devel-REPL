@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 Epoch:      1
 
 Summary:    a modern perl interactive shell
@@ -61,7 +61,7 @@ rm -rf %buildroot
 
 %files
 %defattr(-,root,root)
-%doc Changes
+%doc Changes META.yml
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 %{_bindir}/re.pl
