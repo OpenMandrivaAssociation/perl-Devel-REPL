@@ -1,9 +1,9 @@
 %define upstream_name    Devel-REPL
-%define upstream_version 1.003011
+%define upstream_version 1.003012
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 Epoch:      1
 
 Summary:    a modern perl interactive shell
