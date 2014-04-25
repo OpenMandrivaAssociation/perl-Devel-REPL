@@ -1,12 +1,13 @@
 %define upstream_name    Devel-REPL
-%define upstream_version 1.003012
+%define upstream_version 1.003025
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 Epoch:		1
 
 Summary:	A modern perl interactive shell
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -61,63 +62,4 @@ perl Makefile.PL INSTALLDIRS=vendor --skipdeps
 %{perl_vendorlib}/*
 %{_bindir}/re.pl
 
-%changelog
-* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 1:1.3.12-2mdv2011.0
-+ Revision: 656907
-- rebuild for updated spec-helper
-
-* Fri Nov 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.12-1mdv2011.0
-+ Revision: 596607
-- update to 1.003012
-
-* Mon Sep 27 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.11-2mdv2011.0
-+ Revision: 581245
-- use meta.yml for deps
-
-* Wed Jul 14 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.11-1mdv2011.0
-+ Revision: 553123
-- update to 1.003011
-
-* Wed Mar 10 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.9-1mdv2010.1
-+ Revision: 517311
-- adding missing buildrequires:
-- update to 1.003009
-
-* Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.7-1mdv2010.1
-+ Revision: 504835
-- bump epoch
-- rebuild using %%perl_convert_version
-
-* Fri Jul 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.003007-1mdv2010.0
-+ Revision: 391942
-- update to new version 1.003007
-
-* Fri May 01 2009 Jérôme Quelin <jquelin@mandriva.org> 1.003006-1mdv2010.0
-+ Revision: 369664
-- update to new version 1.003006
-
-* Mon Feb 16 2009 Jérôme Quelin <jquelin@mandriva.org> 1.003004-1mdv2009.1
-+ Revision: 340731
-- update to new version 1.003004
-
-* Sun Feb 08 2009 Jérôme Quelin <jquelin@mandriva.org> 1.003003-1mdv2009.1
-+ Revision: 338448
-- update to new version 1.003003
-
-* Fri Jan 23 2009 Jérôme Quelin <jquelin@mandriva.org> 1.003002-1mdv2009.1
-+ Revision: 333055
-- adding missing prereq for new version
-- update to new version 1.003002
-
-* Mon Jan 12 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.003001-1mdv2009.1
-+ Revision: 328494
-- new version
-
-* Thu Dec 04 2008 Jérôme Quelin <jquelin@mandriva.org> 1.002001-1mdv2009.1
-+ Revision: 309973
-- import perl-Devel-REPL
-
-
-* Thu Dec 04 2008 cpan2dist 1.002001-1mdv
-- initial mdv release, generated with cpan2dist
 
