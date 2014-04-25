@@ -14,6 +14,8 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Test::CheckDeps)
+BuildRequires: perl(namespace::autoclean)
 BuildRequires:	perl(B::Keywords)
 BuildRequires:	perl(Data::Dump::Streamer)
 BuildRequires:	perl(File::HomeDir)
