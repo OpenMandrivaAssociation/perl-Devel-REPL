@@ -1,16 +1,16 @@
 %define upstream_name    Devel-REPL
-%define upstream_version 1.003012
+%define upstream_version 1.003029
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 Epoch:		1
 
 Summary:	A modern perl interactive shell
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/p5sagit/Devel-REPL
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Devel-REPL-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
