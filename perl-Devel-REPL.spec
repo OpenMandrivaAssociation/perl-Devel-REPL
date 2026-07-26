@@ -1,16 +1,14 @@
 %define upstream_name    Devel-REPL
-%define upstream_version 1.003029
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.003029
+Release:	2
 Epoch:		1
 
 Summary:	A modern perl interactive shell
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/p5sagit/Devel-REPL
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Devel-REPL-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Devel-REPL-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -44,7 +42,7 @@ files, for example to pre-load certain Perl modules when working on a
 particular project.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor --skipdeps
@@ -87,9 +85,7 @@ perl Makefile.PL INSTALLDIRS=vendor --skipdeps
 * Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1:1.3.7-1mdv2010.1
 + Revision: 504835
 - bump epoch
-- rebuild using %%perl_convert_version
-
-* Fri Jul 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.003007-1mdv2010.0
+- rebuild using %1.003029 Fri Jul 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.003007-1mdv2010.0
 + Revision: 391942
 - update to new version 1.003007
 
